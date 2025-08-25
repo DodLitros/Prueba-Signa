@@ -1,0 +1,261 @@
+:root {
+  --gap: 12px;
+  --radius: 12px;
+  --primary: #e7344c;
+  --bg: #ffffff;
+  --text: #333333;
+  --font: 'Montserrat', sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font);
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Contenedores generales */
+.container {
+  max-width: 980px;
+  margin: 32px auto;
+  padding: 0 16px;
+}
+
+.card {
+  background: var(--bg);
+  border: 2px solid var(--primary);
+  border-radius: var(--radius);
+  padding: 20px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+/* Títulos */
+h1 {
+  font-size: 32px;
+  margin: 0 0 16px;
+  color: var(--primary);
+}
+
+h2 {
+  font-size: 20px;
+  margin: 0 0 12px;
+  color: var(--primary);
+}
+
+/* Inputs y labels */
+input,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 2px solid var(--primary);
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(231, 52, 76, 0.4);
+}
+
+label {
+  font-size: 14px;
+  color: var(--primary);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* Botones */
+button {
+  padding: 12px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-family: var(--font);
+  font-size: 1rem;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+}
+
+.btn:hover {
+  background: #c1273b;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+.btn.secondary {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.btn.danger {
+  background: #ef4444;
+  color: white;
+}
+
+/* Tablas */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+  color: var(--text);
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 16px;
+  font-size: 12px;
+  color: var(--primary);
+  text-align: center;
+}
+
+/* Wizard */
+.wizard-container {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  background: var(--bg);
+  color: var(--primary);
+}
+
+.step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  position: relative; /* 🔑 necesario */
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 40px;
+  text-align: center;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.input {
+  width: 70%;
+  font-size: 1.5rem;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: 2px solid var(--primary);
+  text-align: center;
+  outline: none;
+  color: var(--text);
+  background: var(--bg);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 6px rgba(231, 52, 76, 0.6);
+}
+.btn-back {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: transparent;
+  color: #e7344c; /* rojo corporativo */
+  border: none;
+  font-size: 2rem;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  z-index: 10;
+}
+.enter-hint {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+  font-size: 1rem;
+  color: #e7344c;
+  opacity: 0.5;
+  font-weight: 500;
+  pointer-events: none;
+}
+
+.btn-back:hover {
+  opacity: 0.9;
+  transform: scale(1.1);
+}
+
+.btn-confirm {
+  margin-top: 30px;
+  font-size: 1.5rem;
+  padding: 14px 28px;
+  border: 2px solid var(--primary);
+  border-radius: 12px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-confirm:hover {
+  background: #c1273b;
+}
+
+.btn-confirm:active {
+  transform: scale(0.97);
+}
+.step-bg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20rem;     
+  font-weight: 800;
+  color: #e7344c;
+  opacity: 0.08;      
+  pointer-events: none;   
+  user-select: none;
+  z-index: 0;
+}
+
+.step {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1; 
+}
