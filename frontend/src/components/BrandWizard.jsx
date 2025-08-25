@@ -1,17 +1,23 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
-export default function BrandWizard({ onConfirm }) {
+export default function BrandWizard({ initialValues = { name: '', owner: '' }, onConfirm }) {
   const [step, setStep] = useState(1);
-  const [name, setName] = useState("");
-  const [owner, setOwner] = useState("");
+  const [name, setName] = useState(initialValues.name || "");
+  const [owner, setOwner] = useState(initialValues.owner || "");
+
+  // Si cambian los valores iniciales (por ejemplo, al editar), actualiza los estados
+  useEffect(() => {
+    setName(initialValues.name || "");
+    setOwner(initialValues.owner || "");
+  }, [initialValues]);
 
   function handleNext(e) {
     e.preventDefault();
     if (step < 3) {
       setStep(step + 1);
     } else {
-      onConfirm({ name, owner });
+      onConfirm({ ...initialValues, name, owner });
     }
   }
 

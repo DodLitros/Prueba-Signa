@@ -7,7 +7,7 @@ import { listBrands, createBrand, updateBrand, deleteBrand } from './api'
 export default function App() {
   const [brands, setBrands] = useState([])
   const [editing, setEditing] = useState(null)
-  const [view, setView] = useState('form') // "form" o "list"
+  const [view, setView] = useState('form')
   const [loading, setLoading] = useState(false)
 
   async function reload() {
@@ -49,7 +49,7 @@ export default function App() {
         flexDirection: "column",
         justifyContent: "space-between",
         padding: "16px",
-        height: "100vh" 
+        height: "100vh"
       }}>
         <h2 style={{ fontSize: '48px', marginBottom: '20px', textAlign: "center" }}>Menú</h2>
         <button className="btn secondary" style={{ width: '100%', marginBottom: '10px' }} onClick={() => setView('form')}>
@@ -75,7 +75,10 @@ export default function App() {
           <div className="card">
             <h2>{editing ? 'Editar marca' : 'Registrar nueva marca'}</h2>
             <div style={{ height: "80vh" }}>
-              <BrandWizard onConfirm={onCreate} />
+              <BrandWizard
+                initialValues={editing ? editing : { name: '', owner: '' }}
+                onConfirm={editing ? onUpdate : onCreate}
+              />
             </div>
           </div>
         )}
