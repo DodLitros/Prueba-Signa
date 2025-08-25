@@ -2,10 +2,17 @@
 
 Proyecto base listo para ejecutar el CRUD solicitado.
 
+## 🛠️ Tecnologías utilizadas
+   Backend: Flask, SQLAlchemy, PostgreSQL, Docker
+
+   Frontend: React, Vite, Framer Motion (animaciones), CSS vanilla. 
+
+   Infraestructura: Docker Compose (para entorno local)
+
 ## Requisitos
 - Python 3.10+
 - Node 18+
-- Docker (opcional, recomendado para levantar PostgreSQL)
+- Docker 
 
 ## Backend (Flask)
 1. Levantar base de datos con Docker:
@@ -26,8 +33,8 @@ Proyecto base listo para ejecutar el CRUD solicitado.
 ### Endpoints
 - `GET    /api/brands` → listar
 - `GET    /api/brands/:id` → detalle
-- `POST   /api/brands` → crear (`{ name, description }`)
-- `PUT    /api/brands/:id` → actualizar (`{ name, description }`)
+- `POST   /api/brands` → crear (`{ name, owner }`)
+- `PUT    /api/brands/:id` → actualizar (`{ name, owner }`)
 - `DELETE /api/brands/:id` → eliminar
 
 ## Frontend (React + Vite)
@@ -37,12 +44,3 @@ Proyecto base listo para ejecutar el CRUD solicitado.
    npm install
    npm run dev
    ```
-   UI en `http://localhost:5173`. Configura `VITE_API_URL` si tu backend no es `http://localhost:5000/api`.
-
-## Despliegue sugerido
-- **Backend:** Render/Railway/Heroku. Expón `/api`.
-- **DB:** Neon/Render/Railway PostgreSQL.
-- **Frontend:** Vercel/Netlify (definir `VITE_API_URL` como variable de entorno).
-
-## Licencia
-Uso libre para fines de la prueba.
