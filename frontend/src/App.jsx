@@ -46,7 +46,6 @@ export default function App() {
         width: "20%",
         backgroundColor: "#fff",
         display: "flex",
-        justifyContent: "center",
         flexDirection: "column",
         justifyContent: "space-between",
         padding: "16px",
