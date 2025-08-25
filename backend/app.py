@@ -15,7 +15,9 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 
 db = SQLAlchemy(app)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
-
+with app.app_context():
+    db.create_all()
+    
 class Brand(db.Model):
     __tablename__ = "brands"
     id = db.Column(db.Integer, primary_key=True)

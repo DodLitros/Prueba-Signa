@@ -1,6 +1,13 @@
-# Prueba Técnica - CRUD Registros de Marca (Flask + PostgreSQL + React)
+# Prueba Técnica
 
 Proyecto base listo para ejecutar el CRUD solicitado.
+
+## Link de acceso público
+   `https://prueba-tecnica-pi-flame.vercel.app`
+
+
+## Código fuente
+   `https://github.com/DodLitros/Prueba-Signa`
 
 ## 🛠️ Tecnologías utilizadas
    Backend: Flask, SQLAlchemy, PostgreSQL, Docker
@@ -29,6 +36,7 @@ Proyecto base listo para ejecutar el CRUD solicitado.
    python app.py
    ```
    API disponible en `http://localhost:5000/api`.
+   API disponible en `https://prueba-signa.onrender.com/api`.
 
 ### Endpoints
 - `GET    /api/brands` → listar
